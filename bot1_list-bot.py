@@ -19,7 +19,7 @@ client = pytumblr.TumblrRestClient(
 
 client_info = client.info()
 ## To check that you are authenticated and that things are set up correctly to post, uncomment the following line and run the script. You should see some output in your terminal window. 
-print(client_info)
+#print(client_info)
 
 ## Creating a text post
 ## What the bot will tweet --
