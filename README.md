@@ -23,9 +23,9 @@ Get this code onto your local machine.
 2. Clone the repository to your local machine.
 - Go to the repository in your account: github.com/(your account name)/bot-tutorial-jumpstart-2022
 - Select the green "Code" button and copy the URL there, which should end in .git
-- In your terminal [mac] or command line [windows], navigate to the folder where you  want this repository to live (your Desktop, for example), and then run the following command to clone the repository to that location: `git clone [repository url ending in .git]`
+- In your terminal [mac] or command line [windows], navigate to your Jumpstart folder which should be located on your desktop: `cd Desktop/Jumpstart2022`, and then run the following command to clone the repository to that location: `git clone [repository url ending in .git]`
 
-3. Navigate into that repository with the command `cd bot-tutorial-jumpstart-2022`
+3. Navigate into that repository with the command `cd jumpstart-bot-tutorial-2022`
 
 ## Get credentials from your Tumblr account 
 Give your Tumblr script the passwords it needs to make posts via code instead of using the Tumblr website.
@@ -33,9 +33,16 @@ Give your Tumblr script the passwords it needs to make posts via code instead of
 1. Go to https://www.tumblr.com/oauth/register and register a new application. 
 - This name isn't public; call it something like JumpstartBot
 - For any urls you need to provide in the registration form, just use the url for your Tumblr that you created when you signed up for your account. (https://(your-blog-name).tumblr.com/)
+ - Fill out the description field
+ - Register the Application.
+ - After you register your Application you should see a list of Applications. Next to the gear there should be a line with `OAuth Consumer Key: [key]`. The next line should have `Show secret key    Request rate limit removal   Explore API.`
+ - Click `Show secret key`
  
-2. Once you've made your app, navigate to https://api.tumblr.com/console/calls/user/info. 
-- At the top of the page you should see a light blue button that says 'Show Keys'.
+2. Once you've made your app, navigate to in a new tab: https://api.tumblr.com/console/calls/user/info.
+- Copy the Oauth Consumer Key and paste in the correct field
+- Copy the secret key and paste in correct field
+- Submit
+- At the top of the page you should see a light blue button that says 'Show Keys'. 
 
 3. Copy your keys to **credentials.template** 
 
@@ -46,16 +53,18 @@ Give your Tumblr script the passwords it needs to make posts via code instead of
 
 This script is a basic Tumblr bot. It will post three things from a **list** inside the script.
 
-1. Go to the bot-tutorial-jumpstart-2021 folder. Click on `bot1_list-bot.py` to see the code
+1. Go to the jumpstart-bot-tutorial-2022 folder. Click on `bot1_list-bot.py` to see the code
 
-3. To check that you are authenticated and that things are set up correctly to post, you can uncomment line 21 (`print(client.info())`) and run the script. Clicking the green "run" triangle will run the script. A Terminal will appear at the bottom of the screen with the output. If you see a lot of output that looks something like this, you are good to go: 
+3. To check that you are authenticated and that things are set up correctly to post, you can uncomment line 22 (`print(client_info)`) and run the script. Clicking the green "run" triangle will run the script. A Terminal will appear at the bottom of the screen with the output. If you see a lot of output that looks something like this, you are good to go:
 
 `{'user': {'name': 'the-programming-librarian', 'likes': 0, 'following': 1, 'default_post_format': 'html', 'blogs': [{'admin': True, 'ask': False, 'ask_anon': False, 'ask_page_title': 'Ask me anything', 'asks_allow_media': True, 'avatar': [{'width': 512, 'height': 512, 'url': 'https://assets.tumblr.com/images/default_avatar/pyramid_open_512.png'}, {'width': 128, 'height': 128, 'url': 'https://assets.tumblr.com/images/default_avatar/pyramid_open_128.png'}, {'width': 96, 'height': 96, 'url': 'https://assets.tumblr.com/images/default_avatar/pyramid_open_96.png'}, {'width': 64, 'height': 64, 'url': 'https://assets.tumblr.com/images/default_avatar/pyramid_open_64.png'}], 'can_chat': False, 'can_send_fan_mail': True, 'can_subscribe': False, 'description': 'A librarian learns how to use the tumblr api to teach a workshop.', 'drafts': 0, 'facebook': 'N', 'facebook_opengraph_enabled': 'N', 'followed': False, 'followers': 0, 'is_blocked_from_primary': False, 'is_nsfw': False, 'likes': 0, 'messages': 0, 'name': 'the-programming-librarian', 'posts': 19, 'primary': True, 'queue': 0, 'share_likes': True, 'subscribed': False, 'theme': {'header_full_width': 3000, 'header_full_height': 1055, 'avatar_shape': 'circle', 'background_color': '#FFFFFF', 'body_font': 'Helvetica Neue', 'header_bounds': '', 'header_image': 'https://64.media.tumblr.com/11e252ac48a565f7f747f091cb11de09/94427a754c2e6e63-ee/s3000x1055/850b010e82fed3882b733c983e7e4b099d1b2134.png', 'header_image_focused': 'https://64.media.tumblr.com/11e252ac48a565f7f747f091cb11de09/94427a754c2e6e63-ee/s2048x3072/e95af88e14211924d0599c93251b19a9f57965e7.png', 'header_image_poster': '', 'header_image_scaled': 'https://64.media.tumblr.com/11e252ac48a565f7f747f091cb11de09/94427a754c2e6e63-ee/s2048x3072/e95af88e14211924d0599c93251b19a9f57965e7.png', 'header_stretch': True, 'link_color': '#00B8FF', 'show_avatar': True, 'show_description': True, 'show_header_image': True, 'show_title': True, 'title_color': '#000000', 'title_font': 'Gibson', 'title_font_weight': 'bold'}, 'title': 'The Programming Librarian', 'total_posts': 19, 'tweet': 'N', 'twitter_enabled': False, 'twitter_send': False, 'type': 'public', 'updated': 1655496858, 'url': 'https://the-programming-librarian.tumblr.com/', 'uuid': 't:0akl_hvuTXSKsf1hVbAu-A'}]}}`
 
 
 3. Take a look at the rest of the script and try to figure out what it's doing. Use the comments (preceded by #) for context.
 
-4. When you are ready to run the bot, uncomment lines 29-38 and run the script again. 
+4. When you are ready to run the bot, uncomment lines 29-38 and run the script again. (Hint: in VSCode you can highlight lines 29-38 and use `CMD(mac)/CTRL(windows)` + `\` to uncomment all the lines).
+
+5. Go to your Tumblr to see these posts: https://(your-blog-name).tumblr.com/
 
 *Change it up!*
 - In `post_list`, add new things for your bot to post
@@ -65,7 +74,7 @@ This script is a basic Tumblr bot. It will post three things from a **list** ins
 
 This script treats the poem *This Is Just To Say* (by William Carlos Williams) as a mad-lib, filling in 3 blanks from 3 data sources: JSON files from @dariusk's [collection of corpora and word lists](https://github.com/dariusk/corpora).
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bot1_list-bot.py` to see the code
+1. Go to the jumpstart-bot-tutorial-2022 folder. Click on `bot2_poem-bot.py` to see the code.
 
 2. You can also see the word lists we are drawing from in the data folder. They are `adjectives.json`, `colors.json`, and `fruits.json`. 
 
@@ -83,13 +92,13 @@ This script treats the poem *This Is Just To Say* (by William Carlos Williams) a
 
 This bot makes a post about a banned book randomly drawn from a spreadsheet of data about banned books. It posts the cover image of the book, the book title, the allged reasons it was challenged and/or banned, as well as the number of years it has spent in the top 10 most frequently challenged/banned books. 
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bot3_banned-books-bot.py`
+1. Go to the jumpstart-bot-tutorial-2022. Click on `bot3_banned-books-bot.py`
 
 2. Take a ook at `banned-books-data.csv` in the data folder as well to see data we are working with. You can also try opening it as an Excel file or spreadsheet to see how it was originally structured. 
 
 3. Take a look at both files and try to figure out what it's doing. Use the comments (preceded by #) for context.
 
-4. In lines 39-48 -- the lines that actually tell our bot to post to Tumblr -- there are some blanks that you will need to fill in. Hint: use the output from `print(chosen_book)` and the blanks that have already been filled to figure out what goes in each. 
+4. In lines 39-48 -- the lines that actually tell our bot to post to Tumblr -- there are some blanks that you will need to fill in. Hint: use the output from `print(chosen_book)` and the blanks that have already been filled to figure out what goes in each. (Hint: look at the README in https://github.com/tumblr/pytumblr for documentation on how to fill out the blanks).
 
 5. Select `Run`
 
@@ -101,7 +110,7 @@ This bot makes a post about a banned book randomly drawn from a spreadsheet of d
 
 This script makes five posts from the first five lines of an external .txt file, `data/phrases_coined_by_shakespeare.txt`
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bonusbot1_text-bot.py`
+1. Go to the jumpstart-bot-tutorial-2022 folder. Click on `bonusbot1_text-bot.py`
 
 2. Also look at `phrases_coined_by_shakespeare.txt` in the data folder to see the text we are using.
 

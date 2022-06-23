@@ -16,9 +16,9 @@ client = pytumblr.TumblrRestClient(
     oauth_secret
 )
 
-
+client_info = client.info()
 ## To check that you are authenticated and that things are set up correctly to post, uncomment the following line and run the script. You should see some output in your terminal window. 
-# print(client.info())
+# print(client_info)
 
 ## Create a list of banned books 
 ## This line instantiates an empty list that we are going to fill in. 
@@ -37,14 +37,13 @@ print(chosen_book)
 ## Post to Tumblr. 
 # This time, there are some blanks to fill in! Select the correct key to include in appropriate places.
 client.create_photo(
-    blogname='', #replace with your blog name 
+    blogname=client_info['user']['name'],
     state="published",  
     source= chosen_book['**FILL ME IN**'],
     link= chosen_book['Link'][9:-13],
-    caption= "\
-    <b><em>" + chosen_book['Title'] + "</em></b><br><br>\
-    Alleged reasons this book was challenged and/or banned: <i>" + chosen_book['**FILL ME IN**'] + "</i><br><br>\
-    Number of years on the top 10 list of most commonly challenged/banned books = " + chosen_book['**FILL ME IN**'] + " year(s).",
+    caption= "<b><em>" + chosen_book['Title'] + '''</em></b><br><br>
+    Alleged reasons this book was challenged and/or banned: <i>''' + chosen_book['**FILL ME IN**'] + '''</i><br><br>
+    Number of years on the top 10 list of most commonly challenged/banned books = ''' + chosen_book['**FILL ME IN**'] + " year(s).",
     tags= ["banned books", "based on data from https://baddatapod.com/badbooks/"])
 
 ## SAMPLE OUTPUT
