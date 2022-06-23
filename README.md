@@ -74,7 +74,7 @@ This script is a basic Tumblr bot. It will post three things from a **list** ins
 
 This script treats the poem *This Is Just To Say* (by William Carlos Williams) as a mad-lib, filling in 3 blanks from 3 data sources: JSON files from @dariusk's [collection of corpora and word lists](https://github.com/dariusk/corpora).
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bot1_list-bot.py` to see the code
+1. Go to the jumpstart-bot-tutorial-2022 folder. Click on `bot2_poem-bot.py` to see the code.
 
 2. You can also see the word lists we are drawing from in the data folder. They are `adjectives.json`, `colors.json`, and `fruits.json`. 
 
@@ -92,13 +92,13 @@ This script treats the poem *This Is Just To Say* (by William Carlos Williams) a
 
 This bot makes a post about a banned book randomly drawn from a spreadsheet of data about banned books. It posts the cover image of the book, the book title, the allged reasons it was challenged and/or banned, as well as the number of years it has spent in the top 10 most frequently challenged/banned books. 
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bot3_banned-books-bot.py`
+1. Go to the jumpstart-bot-tutorial-2022. Click on `bot3_banned-books-bot.py`
 
 2. Take a ook at `banned-books-data.csv` in the data folder as well to see data we are working with. You can also try opening it as an Excel file or spreadsheet to see how it was originally structured. 
 
 3. Take a look at both files and try to figure out what it's doing. Use the comments (preceded by #) for context.
 
-4. In lines 39-48 -- the lines that actually tell our bot to post to Tumblr -- there are some blanks that you will need to fill in. Hint: use the output from `print(chosen_book)` and the blanks that have already been filled to figure out what goes in each. 
+4. In lines 39-48 -- the lines that actually tell our bot to post to Tumblr -- there are some blanks that you will need to fill in. Hint: use the output from `print(chosen_book)` and the blanks that have already been filled to figure out what goes in each. (Hint: look at the README in https://github.com/tumblr/pytumblr for documentation on how to fill out the blanks).
 
 5. Select `Run`
 
@@ -110,7 +110,7 @@ This bot makes a post about a banned book randomly drawn from a spreadsheet of d
 
 This script makes five posts from the first five lines of an external .txt file, `data/phrases_coined_by_shakespeare.txt`
 
-1. Go to the bot-tutorial-jumpstart-2022 folder. Click on `bonusbot1_text-bot.py`
+1. Go to the jumpstart-bot-tutorial-2022 folder. Click on `bonusbot1_text-bot.py`
 
 2. Also look at `phrases_coined_by_shakespeare.txt` in the data folder to see the text we are using.
 

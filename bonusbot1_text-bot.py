@@ -15,8 +15,9 @@ client = pytumblr.TumblrRestClient(
     oauth_secret
 )
 
+client_info = client.info()
 ## To check that you are authenticated and that things are set up correctly to post, uncomment the following line and run the script. You should see some output in your terminal window. 
-# print(client.info())
+# print(client_info)
 
 ## Reading in the text that the bot will post... 
 filename = open('data/phrases_coined_by_shakespeare.txt','r') 
@@ -26,7 +27,7 @@ filename.close()
 # loop through the post_text list and post to tumblr
 for line in post_text[0:5]: # Will only write first 5 lines
     client.create_text(
-        blogname='', #replace with your blog name
+        blogname=client_info['user']['name'],
         state="published", 
         title="Phrases coined by Shakespeare...", 
         body=line)

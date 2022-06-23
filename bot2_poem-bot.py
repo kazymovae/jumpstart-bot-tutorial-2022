@@ -18,8 +18,9 @@ client = pytumblr.TumblrRestClient(
     oauth_secret
 )
 
+client_info = client.info()
 ## To check that you are authenticated and that things are set up correctly to post, uncomment the following line and run the script. You should see some output in your terminal window. 
-# print(client.info())
+# print(client_info)
 
 
 ## First, we need to read in our word lists from the data folder so that we can use them. The word lists are in the json format. 
@@ -72,7 +73,7 @@ and so {2}' \
 
 ## Post to Tumblr
 client.create_text(
-   blogname='', #replace with your blog name
+   blogname=client_info['user']['name'],
    state="published", 
    title="This is just to say...", 
    body=poem, 

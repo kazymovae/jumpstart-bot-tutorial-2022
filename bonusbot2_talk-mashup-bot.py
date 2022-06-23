@@ -68,9 +68,11 @@ title_last_part = enders[random.randrange(1, enders_length)]
 post_text = title_first_part + ' ' + title_last_part
 print(post_text)
 
+client_info = client.info()
+
 # post it
 client.create_text(
-    blogname='', #replace with your blog name
+    blogname=client_info['user']['name'],
     state='published', 
     title='Randomly generated American Library Association Conference Talk Title:', 
     body=post_text)
