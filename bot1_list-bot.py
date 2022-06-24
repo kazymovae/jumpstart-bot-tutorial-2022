@@ -26,7 +26,7 @@ client_info = client.info()
 post_list = ['Test post one', 'Test post two', 'Test post three']
 
 ## Loop through the post_list and post each item
-## Uncomment lines 29-38 to run your bot: 
+## Uncomment lines 29-39 to run your bot: 
 # for line in post_list: 
 #     print('Posting to tumblr:')
 #     print(line)
