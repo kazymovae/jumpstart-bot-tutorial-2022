@@ -23,7 +23,7 @@ Get this code onto your local machine.
 2. Clone the repository to your local machine.
 - Go to the repository in your account: github.com/(your account name)/bot-tutorial-jumpstart-2022
 - Select the green "Code" button and copy the URL there, which should end in .git
-- In your terminal [mac] or command line [windows], navigate to your Jumpstart folder which should be located on your desktop: `cd Desktop/Jumpstart2022`, and then run the following command to clone the repository to that location: `git clone [repository url ending in .git]`
+- In your terminal [mac] or command line [windows], navigate to your Jumpstart folder which should be located on your desktop: `cd ~/Desktop/jumpstart-2022`, and then run the following command to clone the repository to that location: `git clone [repository url ending in .git]`
 
 3. Navigate into that repository with the command `cd jumpstart-bot-tutorial-2022`
 
