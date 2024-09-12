@@ -19,7 +19,7 @@ client = pytumblr.TumblrRestClient(
 
 client_info = client.info()
 ## To check that you are authenticated and that things are set up correctly to post, uncomment the following line and run the script. You should see some output in your terminal window. 
-#print(client_info)
+print(client_info)
 
 ## Creating a text post
 ## What the bot will tweet --
@@ -27,16 +27,16 @@ post_list = ['Test post one', 'Test post two', 'Test post three']
 
 ## Loop through the post_list and post each item
 ## Uncomment lines 29-39 to run your bot: 
-# for line in post_list: 
-#     print('Posting to tumblr:')
-#     print(line)
-#     client.create_text(
-#         blogname=client_info['user']['name'],
-#         state='published', 
-#         title='Testing',
-#         body=line)
-#     print('Pausing...')
-#     time.sleep(5) # Pause for 5 seconds
+for line in post_list: 
+    print('Posting to tumblr:')
+    print(line)
+    client.create_text(
+        blogname=client_info['user']['name'],
+        state='published', 
+        title='Testing',
+        body=line)
+    print('Pausing...')
+    time.sleep(5) # Pause for 5 seconds
 
 print("All done!")
 

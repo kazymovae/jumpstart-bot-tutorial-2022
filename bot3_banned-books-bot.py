@@ -39,11 +39,11 @@ print(chosen_book)
 client.create_photo(
     blogname=client_info['user']['name'],
     state="published",  
-    source= chosen_book['**FILL ME IN**'],
+    source= chosen_book['Cover'],
     link= chosen_book['Link'][9:-13],
     caption= "<b><em>" + chosen_book['Title'] + '''</em></b><br><br>
-    Alleged reasons this book was challenged and/or banned: <i>''' + chosen_book['**FILL ME IN**'] + '''</i><br><br>
-    Number of years on the top 10 list of most commonly challenged/banned books = ''' + chosen_book['**FILL ME IN**'] + " year(s).",
+    Alleged reasons this book was challenged and/or banned: <i>''' + chosen_book['Reason'] + '''</i><br><br>
+    Number of years on the top 10 list of most commonly challenged/banned books = ''' + chosen_book['# of Years on Top 10 List'] + " year(s).",
     tags= ["banned books", "based on data from https://baddatapod.com/badbooks/"])
 
 ## SAMPLE OUTPUT
